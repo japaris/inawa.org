@@ -169,9 +169,9 @@
         <label>Votre idée<textarea name="idea" rows="4" required></textarea></label>
         <fieldset class="radios">
           <legend>Où en êtes-vous ?</legend>
-          <label><input type="radio" name="stage" value="idee" checked> Idée</label>
-          <label><input type="radio" name="stage" value="prototype"> Prototype</label>
-          <label><input type="radio" name="stage" value="lance"> Déjà lancé</label>
+          <label><input type="radio" name="stage" value="idee" checked><span>Idée</span></label>
+          <label><input type="radio" name="stage" value="prototype"><span>Prototype</span></label>
+          <label><input type="radio" name="stage" value="lance"><span>Déjà lancé</span></label>
         </fieldset>
         <label>Budget / timing (optionnel)<input type="text" name="budget"></label>
         <button type="submit" class="btn primary">Me contacter</button>
@@ -180,7 +180,15 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">© Inawa — Tous droits réservés.</div>
+    <div class="container">
+      <nav class="footer-links">
+        <a href="https://github.com/japaris" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://instagram.com/j_in_paris" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://facebook.com/jan.r.tumpach" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://linkedin.com/in/jan-tumpach" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+      <p>© Inawa — Tous droits réservés.</p>
+    </div>
   </footer>
 </body>
 </html>
