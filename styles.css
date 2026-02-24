@@ -72,7 +72,7 @@ nav a.btn:hover{background:var(--bg-light);border-color:var(--accent)}
 .contact-form .radios{display:flex;gap:1.5rem;flex-wrap:wrap}
 .contact-form .radios label{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;cursor:pointer}
 .contact-form .radios label input[type="radio"]{flex-shrink:0;width:1.25rem;height:1.25rem;margin:0;vertical-align:middle}
-.contact-form button{justify-self:center;margin-top:.5rem}
+.contact-form button{justify-self:center;margin-top:.75rem;padding:.9rem 1.6rem;font-size:1rem;line-height:1.1;border-radius:10px;min-height:52px;display:inline-flex;align-items:center;justify-content:center}
 .site-footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;margin-top:3rem;color:var(--muted);font-size:.9rem}
 .site-footer .values{margin:0 0 1rem;color:#374151;font-weight:500}
 .site-footer .footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
