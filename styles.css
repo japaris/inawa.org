@@ -33,33 +33,34 @@ nav a.btn:hover{background:var(--bg-light);border-color:var(--accent)}
 .card{padding:1.5rem;border:1px solid var(--border);border-radius:8px;background:#fff;transition:all .2s}
 .card:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0, 0, 0, .05)}
 .card h3{margin-top:0}
-.method{margin:3rem 0}
-.method .steps{margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.5rem;list-style:none}
+.method{margin:3rem 0;text-align:center}
+.method h2{margin-bottom:1.5rem}
+.method .steps{margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.5rem;list-style:none;text-align:left}
 .method .steps li{padding:1.2rem;background:var(--bg-light);border-radius:8px}
 .method .note{margin-top:1.5rem;padding:1rem;background:var(--bg-light);border-left:3px solid var(--accent);font-style:italic}
-.services{margin:3rem 0}
+.services{margin:3rem 0;text-align:center}
 .services h2{margin-bottom:1rem}
-.services .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.5rem;margin-top:2rem}
+.services .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.5rem;margin-top:2rem;text-align:left}
 .offer{padding:1.5rem;border:1px solid var(--border);border-radius:8px;background:#fff;transition:all .2s}
 .offer:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0, 0, 0, .08)}
 .offer h3{margin-top:0}
 .offer ul{margin:.8rem 0 1rem 1.5rem;font-size:.95rem}
-.products{margin:3rem 0}
-.products .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.5rem;margin-top:2rem}
+.products{margin:3rem 0;text-align:center}
+.products .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.5rem;margin-top:2rem;text-align:left}
 .product{display:flex;flex-direction:column;padding:1.2rem;border:1px solid var(--border);border-radius:8px;text-decoration:none;color:inherit;transition:all .2s;background:#fff}
 .product:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0, 0, 0, .1);transform:translateY(-2px)}
 .product-thumb{width:80px;height:80px;border-radius:14px;object-fit:cover;margin-bottom:1rem;flex-shrink:0;max-width:100%}
 .product h4{margin-top:0;margin-bottom:.4rem;overflow-wrap:break-word;word-break:break-word}
 .muted{color:var(--muted);font-size:.95rem}
-.trust{margin:3rem 0}
-.trust .chips{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.trust{margin:3rem 0;text-align:center}
+.trust .chips{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
 .trust .chips li{list-style:none;padding:.5rem .8rem;border-radius:999px;background:var(--bg-light);border:1px solid var(--border);font-size:.9rem}
-.about{margin:3rem 0;padding:2rem;background:var(--bg-light);border-radius:8px}
-.about p{color:#374151}
-.contact{margin:3rem 0}
+.about{margin:3rem 0;padding:2rem;background:var(--bg-light);border-radius:8px;text-align:center}
+.about p{color:#374151;max-width:700px;margin-left:auto;margin-right:auto}
+.contact{margin:3rem 0;text-align:center}
 .contact h2{margin-bottom:.5rem}
 .contact > p{color:var(--muted);margin-bottom:1.5rem}
-.contact-form{display:grid;grid-gap:1rem;max-width:600px;width:100%;margin-top:1.5rem}
+.contact-form{display:grid;grid-gap:1rem;max-width:600px;width:100%;margin:1.5rem auto 0;text-align:left}
 .contact-form label{display:block;font-weight:500;margin-bottom:.3rem;font-size:.95rem}
 .contact-form input,.contact-form textarea{width:100%;padding:.7rem;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:.95rem}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(11, 110, 253, .1)}
@@ -68,7 +69,7 @@ nav a.btn:hover{background:var(--bg-light);border-color:var(--accent)}
 .contact-form .radios{display:flex;gap:1.5rem;flex-wrap:wrap}
 .contact-form .radios label{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;cursor:pointer}
 .contact-form .radios label input[type="radio"]{flex-shrink:0;width:1.25rem;height:1.25rem;margin:0;vertical-align:middle}
-.contact-form button{align-self:flex-start;margin-top:.5rem}
+.contact-form button{justify-self:center;margin-top:.5rem}
 .site-footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;margin-top:3rem;color:var(--muted);font-size:.9rem}
 .site-footer .footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
 .site-footer .footer-links a{color:var(--muted);text-decoration:none}
