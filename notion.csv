@@ -1,0 +1,10 @@
+Service,Catégorie,Type,Projet,Fréquence,Montant,Devise,Montant mensuel,Critique ?,Renouvellement,Payé par,Notes
+ChatGPT Plus,IA,Abonnement,"Mutualisé",Mensuel,20,EUR,,TRUE,2026-02-01,Perso,Usage quotidien PM / Dev
+GitHub Pro,Dev,Abonnement,"Mutualisé",Mensuel,4,USD,,FALSE,2026-02-10,Perso,Repos privés
+OVH VPS,Infra,Abonnement,"Lexiqo",Mensuel,12,EUR,,TRUE,2026-02-05,Pro,Backend Lexiqo
+Cloudflare,Infra,Abonnement,"Mutualisé",Annuel,120,USD,,TRUE,2026-09-01,Pro,DNS + sécurité
+Apple Developer Program,Store,Abonnement,"Mutualisé",Annuel,99,EUR,,TRUE,2026-06-15,Perso,Accès App Store
+Google Play Developer,Store,Abonnement,"Mutualisé",Ponctuel,25,USD,,TRUE,,Perso,Frais unique
+Supabase,Dev,Abonnement,"Us","Mensuel",25,USD,,TRUE,2026-02-01,Pro,Backend Us
+LiveKit,Dev,Abonnement,"Us",Mensuel,0,USD,,FALSE,2026-02-01,Pro,Plan gratuit MVP
+Nom de domaine tandabuilder.com,Marketing,Abonnement,"TandaBuilder",Annuel,12,EUR,,TRUE,2026-11-10,Pro,OVH
