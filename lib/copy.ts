@@ -1,6 +1,7 @@
 // Copie centralisée de la landing inawa.org.
 // Voix : tutoiement, chaleureuse, sans jargon (cf. note fondatrice inawa-landing.md).
 // Aucune chaîne marketing en dur dans les composants : tout passe par cet objet.
+// La typographie française (espace insécable avant ; : ! ?) est appliquée par deepFr().
 
 export const SITE = {
   name: "Inawa",
@@ -17,7 +18,7 @@ export const SITE = {
   },
 } as const;
 
-export const LANDING = {
+const LANDING_RAW = {
   nav: [
     { label: "Comment on travaille", href: "#methode" },
     { label: "Les bonnes questions", href: "#questions" },
@@ -51,31 +52,11 @@ export const LANDING = {
     intro:
       "Je ne lis pas deux porteurs de la même manière. D'abord, je comprends où tu en es : la nature de ton projet, ton rapport à la structure, le stade de ton idée, et ce qui te pousse à te lancer maintenant. Ensuite, on descend ensemble, strate par strate.",
     strates: [
-      {
-        num: "01",
-        name: "Vision",
-        body: "Le changement que tu veux voir dans le monde.",
-      },
-      {
-        num: "02",
-        name: "Mission",
-        body: "Ce que tu proposes, à qui, et pour quel bénéfice.",
-      },
-      {
-        num: "03",
-        name: "Stratégie",
-        body: "Pourquoi on te choisira toi, et comment ton projet dure.",
-      },
-      {
-        num: "04",
-        name: "Tactique",
-        body: "Les grands chantiers pour démarrer.",
-      },
-      {
-        num: "05",
-        name: "Opérationnel",
-        body: "Ce que tu fais dès cette semaine.",
-      },
+      { num: "01", name: "Vision", body: "Le changement que tu veux voir dans le monde." },
+      { num: "02", name: "Mission", body: "Ce que tu proposes, à qui, et pour quel bénéfice." },
+      { num: "03", name: "Stratégie", body: "Pourquoi on te choisira toi, et comment ton projet dure." },
+      { num: "04", name: "Tactique", body: "Les grands chantiers pour démarrer." },
+      { num: "05", name: "Opérationnel", body: "Ce que tu fais dès cette semaine." },
     ],
   },
 
@@ -182,3 +163,27 @@ export const LANDING = {
     rights: "Tous droits réservés.",
   },
 } as const;
+
+// Typographie française : insère une espace insécable (code 160) avant ; : ! ? et
+// entre un nombre et son unité, partout dans la copie, sans polluer les sources.
+// Les URL ne sont pas affectées (le motif exige une espace AVANT la ponctuation).
+const NBSP = String.fromCharCode(160);
+
+function deepFr<T>(value: T): T {
+  if (typeof value === "string") {
+    return value
+      .replace(/ ([;:!?])/g, NBSP + "$1")
+      .replace(/(\d) (minutes?|heures?)/g, "$1" + NBSP + "$2") as unknown as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((v) => deepFr(v)) as unknown as T;
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([k, v]) => [k, deepFr(v)]),
+    ) as unknown as T;
+  }
+  return value;
+}
+
+export const LANDING = deepFr(LANDING_RAW);
