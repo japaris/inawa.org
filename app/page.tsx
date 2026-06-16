@@ -161,9 +161,14 @@ export default function Home() {
                   key={p.name}
                   className="flex gap-5 rounded-2xl border border-border bg-cream p-6 transition-shadow hover:shadow-md"
                 >
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-navy font-display text-xl font-semibold text-cream">
-                    {p.name.charAt(0)}
-                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.icon}
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 flex-shrink-0 rounded-xl object-cover"
+                  />
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="font-display text-xl font-semibold text-navy">

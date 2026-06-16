@@ -111,24 +111,28 @@ const LANDING_RAW = {
     items: [
       {
         name: "TandaBuilder",
+        icon: "/projets/tandabuilder.png",
         tag: "Logiciel macOS",
         body: "Outil professionnel pour les DJs de tango : structuration métier et exécution produit.",
         href: "https://tandabuilder.com/",
       },
       {
         name: "MediaLuna",
+        icon: "/projets/medialuna.png",
         tag: "Plateforme web",
         body: "Gestion d'événements de tango en modèle admission-first : pré-inscription, sélection, paiement.",
         href: "https://medialuna.org/",
       },
       {
         name: "Lexiqo",
+        icon: "/projets/lexiqo.png",
         tag: "Jeu multi-plateformes",
         body: "Jeu sémantique pensé pour durer : vision claire, parcours sobre, lancement réel.",
         href: null,
       },
       {
         name: "Us",
+        icon: "/projets/us.png",
         tag: "Application iOS et Android",
         body: "Espace privé pour une relation : vision claire, parcours sobre, lancement réel.",
         href: null,
