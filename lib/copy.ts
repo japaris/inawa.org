@@ -145,6 +145,11 @@ const LANDING_RAW = {
     body: "Repars avec une vision claire de tes prochaines priorités. Je te dirai honnêtement si je peux t'aider.",
     ctaCalendly: "Réserver 30 minutes",
     formIntro: "Tu préfères écrire d'abord ? Laisse-moi un mot.",
+    feedback: {
+      sending: "Envoi...",
+      success: "Merci, ton message est parti. Je te réponds vite.",
+      error: "L'envoi a échoué. Réessaie, ou écris-moi à jan@inawa.org.",
+    },
     fields: {
       name: "Ton nom",
       email: "Ton email",

@@ -1,6 +1,7 @@
 import { SITE, LANDING } from "@/lib/copy";
 import { SiteHeader } from "./_components/site-header";
 import { SiteFooter } from "./_components/site-footer";
+import { ContactForm } from "./_components/contact-form";
 
 export default function Home() {
   return (
@@ -198,29 +199,25 @@ export default function Home() {
 
         {/* CONTACT */}
         <section id="contact" className="scroll-mt-24 bg-sand">
-          <div className="mx-auto max-w-2xl px-6 py-20 text-center md:py-24">
-            <h2 className="font-display text-3xl font-semibold text-navy md:text-4xl">
-              {LANDING.contact.title}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-ink/80">
-              {LANDING.contact.body}
-            </p>
-            <a
-              href={SITE.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-terracotta px-8 py-4 text-base font-medium text-cream shadow-sm transition-all hover:bg-terracotta-deep hover:shadow-md"
-            >
-              {LANDING.contact.ctaCalendly}
-            </a>
-            <p className="mt-8 text-sm text-muted">{LANDING.contact.formIntro}</p>
-            <a
-              href={`mailto:${SITE.email}`}
-              className="mt-2 inline-block font-medium text-navy underline-offset-4 hover:text-terracotta hover:underline"
-            >
-              {SITE.email}
-            </a>
-            {/* Lot 1 : formulaire complet branché sur Brevo (route API). */}
+          <div className="mx-auto max-w-2xl px-6 py-20 md:py-24">
+            <div className="text-center">
+              <h2 className="font-display text-3xl font-semibold text-navy md:text-4xl">
+                {LANDING.contact.title}
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-ink/80">
+                {LANDING.contact.body}
+              </p>
+              <a
+                href={SITE.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-full bg-terracotta px-8 py-4 text-base font-medium text-cream shadow-sm transition-all hover:bg-terracotta-deep hover:shadow-md"
+              >
+                {LANDING.contact.ctaCalendly}
+              </a>
+              <p className="mt-8 text-sm text-muted">{LANDING.contact.formIntro}</p>
+            </div>
+            <ContactForm />
           </div>
         </section>
       </main>
