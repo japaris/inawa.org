@@ -4,7 +4,7 @@ import { SiteHeader } from "../_components/site-header";
 import { SiteFooter } from "../_components/site-footer";
 
 export const metadata: Metadata = {
-  title: `Mentions légales — ${SITE.name}`,
+  title: `Mentions légales - ${SITE.name}`,
   robots: { index: false },
 };
 

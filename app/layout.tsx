@@ -17,11 +17,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.baseUrl),
-  title: `${SITE.founder} — ${SITE.role}`,
+  title: `${SITE.founder} - ${SITE.role}`,
   description:
     "Product Manager freelance. J'aide les porteurs de projet à transformer une idée en projet qui tient debout, du pourquoi profond jusqu'au premier pas concret.",
   openGraph: {
-    title: `${SITE.founder} — ${SITE.role}`,
+    title: `${SITE.founder} - ${SITE.role}`,
     description:
       "Tu as une idée. Construisons le projet. J'accompagne les porteurs de projet, de la vision au lancement.",
     url: SITE.baseUrl,

@@ -41,7 +41,7 @@ export function SiteFooter() {
           </a>
         </nav>
         <p className="mt-8 text-sm text-muted">
-          © {year} {SITE.name} — {LANDING.footer.rights}
+          © {year} {SITE.name} - {LANDING.footer.rights}
           {" · "}
           <a
             href="/mentions-legales"

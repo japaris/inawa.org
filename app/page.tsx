@@ -70,7 +70,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* METHODE — la descente top-down */}
+        {/* METHODE - la descente top-down */}
         <section id="methode" className="scroll-mt-24 bg-sand">
           <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
             <h2 className="font-display text-3xl font-semibold text-navy md:text-4xl">
@@ -139,7 +139,7 @@ export default function Home() {
                   <blockquote className="text-cream/85">“{t.quote}”</blockquote>
                   <figcaption className="mt-5 text-sm">
                     <span className="font-semibold">{t.author}</span>
-                    <span className="text-cream/60"> — {t.context}</span>
+                    <span className="text-cream/60"> - {t.context}</span>
                   </figcaption>
                 </figure>
               ))}
