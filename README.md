@@ -50,5 +50,6 @@ ssh aida 'sudo -u inawa -H bash -c "cd /srv/inawa/app && git pull --ff-only && n
 
 ## DNS / bascule
 
-L'apex `inawa.org` (Cloudflare, proxy orange) sert encore l'ancien site jusqu'à la
-bascule finale (repointage A vers `65.108.111.116`, détachement de Cloudflare Pages).
+Depuis le cutover du 2026-06-17, l'apex `inawa.org` et `www` (Cloudflare, proxy orange)
+servent ce site depuis Aïda (`65.108.111.116`) ; `www` redirige vers l'apex en 301.
+L'ancien site statique est archivé sur la branche `legacy-static`.
