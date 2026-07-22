@@ -122,22 +122,19 @@ export default function Home() {
         {/* TEMOIGNAGES (placeholders) */}
         <section className="bg-navy text-cream">
           <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-            <div className="flex flex-wrap items-baseline justify-between gap-3">
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                {LANDING.temoignages.title}
-              </h2>
-              <span className="rounded-full border border-cream/30 px-3 py-1 text-xs text-cream/70">
-                {LANDING.temoignages.note}
-              </span>
-            </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <h2 className="text-center font-display text-3xl font-semibold md:text-4xl">
+              {LANDING.temoignages.title}
+            </h2>
+            <div className="mx-auto mt-10 max-w-3xl space-y-6">
               {LANDING.temoignages.items.map((t, i) => (
                 <figure
                   key={i}
-                  className="rounded-2xl border border-cream/15 bg-cream/5 p-6"
+                  className="rounded-2xl border border-cream/15 bg-cream/5 p-8"
                 >
-                  <blockquote className="text-cream/85">“{t.quote}”</blockquote>
-                  <figcaption className="mt-5 text-sm">
+                  <blockquote className="text-lg leading-relaxed text-cream/90">
+                    “{t.quote}”
+                  </blockquote>
+                  <figcaption className="mt-6 text-sm">
                     <span className="font-semibold">{t.author}</span>
                     <span className="text-cream/60"> - {t.context}</span>
                   </figcaption>

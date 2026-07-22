@@ -20,9 +20,12 @@ export default function MentionsLegales() {
         <section className="mt-8">
           <h2 className="font-display text-xl font-semibold text-navy">Éditeur</h2>
           <p className="mt-3 text-ink/85">
-            Ce site est édité par {SITE.founder}, {SITE.role}.
+            Ce site est édité par Jan Tumpach-Lego, entrepreneur individuel
+            (micro-entreprise), exerçant sous le nom Inawa.
             <br />
-            Statut juridique, SIREN/SIRET et adresse : à compléter.
+            SIREN : 519 237 333 - SIRET du siège : 519 237 333 00025
+            <br />
+            Adresse : 4 avenue Cantorum, 92500 Rueil-Malmaison, France
             <br />
             Contact :{" "}
             <a
@@ -38,7 +41,7 @@ export default function MentionsLegales() {
           <h2 className="font-display text-xl font-semibold text-navy">
             Directeur de la publication
           </h2>
-          <p className="mt-3 text-ink/85">{SITE.founder}</p>
+          <p className="mt-3 text-ink/85">Jan Tumpach-Lego</p>
         </section>
 
         <section className="mt-8">

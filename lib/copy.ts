@@ -75,31 +75,15 @@ const LANDING_RAW = {
       "Si ces questions te donnent envie d'y répondre sérieusement, on est faits pour travailler ensemble.",
   },
 
-  // Placeholders assumés : à remplacer par de vrais témoignages (cf. brief, Lot 2).
+  // Témoignage réel (donné par Arno pour medialuna.org, réutilisé avec son accord).
   temoignages: {
     title: "Ils ont posé leur projet avec moi",
-    note: "Témoignages en cours de collecte.",
     items: [
       {
         quote:
-          "Témoignage à venir. Cet espace accueillera le retour d'un porteur de projet accompagné, avec un résultat concret.",
-        author: "Prénom N.",
-        context: "Projet accompagné",
-        placeholder: true,
-      },
-      {
-        quote:
-          "Témoignage à venir. Cet espace accueillera le retour d'un porteur de projet accompagné, avec un résultat concret.",
-        author: "Prénom N.",
-        context: "Projet accompagné",
-        placeholder: true,
-      },
-      {
-        quote:
-          "Témoignage à venir. Cet espace accueillera le retour d'un porteur de projet accompagné, avec un résultat concret.",
-        author: "Prénom N.",
-        context: "Projet accompagné",
-        placeholder: true,
+          "Une fois les mises en pages avec photos et textes validés, la mise en ligne a été très rapide, sur mon propre domaine et en plusieurs langues. Pour parachever le tout, pouvoir garder le contrôle sur les inscriptions et les quotas sans intervention extérieure est parfait pour savoir où on en est. Un travail ultra pro indispensable pour qui veut un résultat efficace à la pointe de ce qui se fait aujourd'hui.",
+        author: "Arno des Brosses",
+        context: "La Parisiana Milonga, organisateur tango",
       },
     ],
   },
