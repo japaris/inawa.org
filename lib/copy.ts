@@ -107,8 +107,15 @@ const LANDING_RAW = {
   realisations: {
     title: "Des projets que j'ai construits",
     intro:
-      "Des produits que je porte ou que j'ai accompagnés, de la vision jusqu'à la mise en marché.",
+      "Des missions livrées pour des clients et des produits que je porte, de la vision jusqu'à la mise en marché.",
     items: [
+      {
+        name: "La Parisiana d'Azur",
+        icon: "/projets/laparisiana.jpg",
+        tag: "Mission client",
+        body: "Site d'événement tango multilingue sur la Côte d'Azur, avec inscriptions en ligne gérées par le SaaS MediaLuna. Livré en production pour Arno, organisateur.",
+        href: "https://laparisianazur.tangoarno.com/",
+      },
       {
         name: "TandaBuilder",
         icon: "/projets/tandabuilder.png",

@@ -34,6 +34,34 @@ export const metadata: Metadata = {
   },
 };
 
+// Données structurées (Google) : qui est Jan, quel service rend Inawa.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: SITE.founder,
+      jobTitle: SITE.role,
+      url: SITE.baseUrl,
+      sameAs: [
+        SITE.socials.linkedin,
+        SITE.socials.github,
+        SITE.socials.instagram,
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      name: SITE.name,
+      url: SITE.baseUrl,
+      description:
+        "Accompagnement de porteurs de projet par un Product Manager freelance : clarifier la vision, structurer le projet, lancer.",
+      founder: { "@type": "Person", name: SITE.founder },
+      email: SITE.email,
+      areaServed: "FR",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -41,7 +69,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

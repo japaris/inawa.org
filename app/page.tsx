@@ -175,7 +175,13 @@ export default function Home() {
                       <h3 className="font-display text-xl font-semibold text-navy">
                         {p.name}
                       </h3>
-                      <span className="rounded-full bg-sand px-2.5 py-0.5 text-xs text-muted">
+                      <span
+                        className={`rounded-full px-2.5 py-0.5 text-xs ${
+                          p.tag === "Mission client"
+                            ? "bg-terracotta font-medium text-cream"
+                            : "bg-sand text-muted"
+                        }`}
+                      >
                         {p.tag}
                       </span>
                     </div>
