@@ -122,11 +122,18 @@ const LANDING_RAW = {
         href: "https://lexiqo.app/",
       },
       {
-        name: "Us",
-        icon: "/projets/us.png",
-        tag: "Application iOS et Android",
-        body: "Espace privé pour une relation : vision claire, parcours sobre, lancement réel.",
-        href: "https://us.inawa.app/",
+        name: "Depth - Cinematic Wallpapers",
+        icon: "/projets/depth.png",
+        tag: "Application macOS",
+        body: "Une photo devient une scène vivante par parallaxe de profondeur. Traitement 100 % local, en vente sur le Mac App Store.",
+        href: "https://depth.inawa.app/",
+      },
+      {
+        name: "Markdown Buddy",
+        icon: "/projets/markdown-buddy.png",
+        tag: "Application macOS",
+        body: "Aperçu Markdown instantané pour développeurs, depuis Xcode ou le Finder. En vente sur le Mac App Store.",
+        href: "https://markdownbuddy.inawa.app/",
       },
     ],
   },
@@ -173,7 +180,7 @@ function deepFr<T>(value: T): T {
   if (typeof value === "string") {
     return value
       .replace(/ ([;:!?])/g, NBSP + "$1")
-      .replace(/(\d) (minutes?|heures?)/g, "$1" + NBSP + "$2") as unknown as T;
+      .replace(/(\d) (minutes?|heures?|%)/g, "$1" + NBSP + "$2") as unknown as T;
   }
   if (Array.isArray(value)) {
     return value.map((v) => deepFr(v)) as unknown as T;
