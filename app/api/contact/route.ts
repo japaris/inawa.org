@@ -74,6 +74,10 @@ export async function POST(request: Request) {
   // ces requêtes partagent un compartiment unique et donc la même limite. Sauter
   // le contrôle dans ce cas est précisément le défaut qui a laissé l'endpoint de
   // medialuna.org sans protection.
+  //
+  // La source de l'IP est choisie par `clientIp` dans un ordre qui exclut
+  // délibérément les en-têtes que le client contrôle, sans quoi la limite se
+  // contournerait en variant l'en-tête à chaque requête.
   const ip = clientIp(request.headers) ?? "inconnue";
   const address = email.toLowerCase();
 

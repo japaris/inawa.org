@@ -76,8 +76,26 @@ export function allow(key: string, limits: Limit[]): boolean {
 }
 
 /**
- * IP du client derrière le proxy nginx d'Aïda. `x-forwarded-for` peut
- * contenir une chaîne de proxies : la première entrée est le client.
+ * IP du client, par ordre de fiabilité DÉCROISSANTE.
+ *
+ * L'ordre n'est pas cosmétique, c'est le coeur de la protection : une limite
+ * par IP ne vaut que si l'attaquant ne choisit pas la valeur qui l'indexe.
+ *
+ * 1. `cf-connecting-ip` : inawa.org est servi derrière Cloudflare (DNS en
+ *    172.67.x / 104.21.x, réponses `server: cloudflare`). Cloudflare pose
+ *    lui-même cet en-tête et écrase toute valeur envoyée par le client : il
+ *    est donc le seul non falsifiable ici.
+ * 2. `x-real-ip` : posé par nginx à partir de `$remote_addr`, l'adresse TCP
+ *    de la connexion entrante. Non falsifiable non plus, mais derrière
+ *    Cloudflare il vaut l'IP de Cloudflare, donc tout le trafic partage un
+ *    même compartiment. Dégradé mais sûr : la limite devient plus stricte,
+ *    jamais plus permissive.
+ * 3. `x-forwarded-for` en DERNIER, et jamais tant que l'un des deux
+ *    précédents répond. nginx l'alimente avec `$proxy_add_x_forwarded_for`,
+ *    qui AJOUTE l'adresse observée à la valeur reçue du client : sa première
+ *    entrée provient donc du client lui-même. S'en servir en priorité
+ *    laisserait n'importe qui remettre son compteur à zéro à chaque requête
+ *    en variant l'en-tête.
  *
  * Renvoie `null` si aucune IP n'est déterminable. L'appelant doit alors
  * traiter la requête comme suspecte plutôt que de sauter la limite : c'est
@@ -85,10 +103,16 @@ export function allow(key: string, limits: Limit[]): boolean {
  * désactivée en silence sur medialuna.org.
  */
 export function clientIp(headers: Headers): string | null {
+  const cloudflare = headers.get("cf-connecting-ip")?.trim();
+  if (cloudflare) return cloudflare;
+
+  const real = headers.get("x-real-ip")?.trim();
+  if (real) return real;
+
   const forwarded = headers.get("x-forwarded-for");
   if (forwarded) {
     const first = forwarded.split(",")[0]?.trim();
     if (first) return first;
   }
-  return headers.get("x-real-ip")?.trim() || null;
+  return null;
 }
