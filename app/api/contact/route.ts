@@ -1,7 +1,34 @@
 import { NextResponse } from "next/server";
+import { allow, clientIp, DAY, HOUR, type Limit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+/**
+ * Limites d'envoi du formulaire de contact.
+ *
+ * Cet endpoint est public et chaque appel valide déclenche un email via
+ * Brevo. Le destinataire est fixe (jan@inawa.org), donc le risque n'est pas
+ * de bombarder un tiers mais de vider le quota du compte Brevo, partagé avec
+ * medialuna.org et diagnostic-pme : 300 envois par jour pour les trois.
+ * Le honeypot n'arrête qu'un robot naïf, celui qui remplit tous les champs.
+ *
+ * Les valeurs sont calibrées sur l'usage réel d'un site vitrine de freelance :
+ * quelques messages par semaine. Un visiteur légitime qui envoie deux fois son
+ * message n'est jamais gêné.
+ */
+const PER_IP: Limit[] = [
+  { windowMs: HOUR, max: 3 },
+  { windowMs: DAY, max: 10 },
+];
+
+const PER_EMAIL: Limit[] = [
+  { windowMs: HOUR, max: 2 },
+  { windowMs: DAY, max: 5 },
+];
+
+/** Filet de sécurité, toutes provenances confondues. */
+const GLOBAL: Limit[] = [{ windowMs: DAY, max: 40 }];
 
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email";
 // Expéditeur : domaine inawa.app authentifié dans Brevo (PAS inawa.org).
@@ -37,6 +64,38 @@ export async function POST(request: Request) {
 
   if (!name || !idea || !isEmail(email)) {
     return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
+  }
+
+  // Limitation de débit. Le refus renvoie la même réponse que le succès, comme
+  // le fait déjà le honeypot : rien ne doit indiquer à un script qu'il a été
+  // arrêté, ni lui permettre de sonder les seuils.
+  //
+  // Une IP indéterminable (en-tête absent ou vide) n'exempte pas de la limite :
+  // ces requêtes partagent un compartiment unique et donc la même limite. Sauter
+  // le contrôle dans ce cas est précisément le défaut qui a laissé l'endpoint de
+  // medialuna.org sans protection.
+  //
+  // La source de l'IP est choisie par `clientIp` dans un ordre qui exclut
+  // délibérément les en-têtes que le client contrôle, sans quoi la limite se
+  // contournerait en variant l'en-tête à chaque requête.
+  const ip = clientIp(request.headers) ?? "inconnue";
+  const address = email.toLowerCase();
+
+  // Ordre voulu : du plus spécifique au plus général. Le compteur global n'est
+  // consommé qu'une fois les autres franchis, sinon un seul attaquant déjà
+  // bloqué par IP viderait quand même le compteur global et rendrait le
+  // formulaire indisponible pour tout le monde.
+  if (!allow(`ip:${ip}`, PER_IP)) {
+    console.warn(`[contact] limite par IP atteinte (${ip}), message ignoré`);
+    return NextResponse.json({ ok: true });
+  }
+  if (!allow(`email:${address}`, PER_EMAIL)) {
+    console.warn(`[contact] limite par adresse atteinte (${address}), message ignoré`);
+    return NextResponse.json({ ok: true });
+  }
+  if (!allow("global", GLOBAL)) {
+    console.warn("[contact] plafond journalier global atteint, message ignoré");
+    return NextResponse.json({ ok: true });
   }
 
   const apiKey = process.env.BREVO_API_KEY;
