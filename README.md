@@ -30,7 +30,7 @@ Règle : aucune chaîne marketing en dur dans les composants, tout passe par `li
 ## Déploiement (serveur Aïda)
 
 - Hôte : Aïda (Hetzner), user de service `inawa`, code dans `/srv/inawa/app`.
-- Process : systemd `inawa.service`, Node 22, `next start` sur `127.0.0.1:3140`.
+- Process : systemd `inawa.service`, Node 24 LTS, `next start` sur `127.0.0.1:3140`.
 - Reverse proxy : nginx (pattern Aïda, `listen 65.108.111.116:443 ssl http2`), TLS Let's Encrypt.
 - Branche déployée : `main`.
 
