@@ -47,6 +47,7 @@ const jsonLd = {
         SITE.socials.linkedin,
         SITE.socials.github,
         SITE.socials.instagram,
+        "https://inawa.app/",
       ],
     },
     {

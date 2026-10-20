@@ -1,6 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Inawa">
-  <rect width="32" height="32" rx="7" fill="#1e3a5f"/>
-  <rect x="9" y="8.5" width="14" height="3" rx="1.5" fill="#faf8f5"/>
-  <rect x="14" y="8.5" width="4" height="15" fill="#faf8f5"/>
-  <rect x="9" y="20.5" width="14" height="3" rx="1.5" fill="#c0613a"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Inawa monogramme i et w">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#15105B"/><stop offset="1" stop-color="#171052"/></linearGradient>
+ <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9FFF7"/><stop offset="1" stop-color="#DDFCF1"/></linearGradient>
+ <linearGradient id="turq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4EECD8"/><stop offset="1" stop-color="#29D0D0"/></linearGradient>
+ <linearGradient id="right" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#36E6D0"/><stop offset="1" stop-color="#25BFC5"/></linearGradient>
+</defs>
+<rect x="12" y="12" width="1000" height="1000" rx="185" fill="url(#bg)"/>
+<!-- dot of i -->
+<circle cx="244" cy="300" r="77" fill="url(#turq)"/>
+<!-- italic i stroke -->
+<path d="M168 420 H310 Q326 420 336 440 L456 672 Q467 695 482 703 Q449 747 401 754 Q330 763 301 708 L159 444 Q149 420 168 420 Z" fill="url(#stem)"/>
+<!-- first ascending diagonal of w -->
+<path d="M444 420 H555 Q578 420 591 445 L659 577 L714 682 Q733 721 771 719 Q740 758 698 761 Q626 763 593 698 L434 446 Q422 420 444 420 Z" fill="url(#turq)"/>
+<!-- right arm of w; drawn above left arm, joining at the V -->
+<path d="M784 420 H889 Q911 420 900 443 L754 715 Q735 753 695 760 Q723 743 710 712 L660 609 L733 454 Q748 420 784 420 Z" fill="url(#right)"/>
 </svg>
