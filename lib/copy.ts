@@ -136,6 +136,10 @@ const LANDING_RAW = {
         href: "https://markdownbuddy.inawa.app/",
       },
     ],
+    appsLink: {
+      label: "Toutes mes apps sur inawa.app",
+      href: "https://inawa.app/",
+    },
   },
 
   contact: {

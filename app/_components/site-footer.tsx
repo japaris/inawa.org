@@ -34,6 +34,14 @@ export function SiteFooter() {
             Instagram
           </a>
           <a
+            href="https://inawa.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-terracotta"
+          >
+            Mes apps
+          </a>
+          <a
             href={`mailto:${SITE.email}`}
             className="transition-colors hover:text-terracotta"
           >

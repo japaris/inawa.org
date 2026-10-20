@@ -197,6 +197,14 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <a
+              href={LANDING.realisations.appsLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-block font-medium text-terracotta hover:underline"
+            >
+              {LANDING.realisations.appsLink.label} →
+            </a>
           </div>
         </section>
 
